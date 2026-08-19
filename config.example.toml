@@ -1,0 +1,51 @@
+[homeserver]
+# The homeserver's public key (pkarr domain)
+pubkey = "5jsjx1o6fzu6aeeo697r3i5rx15zq41kikcye8wtwdqm4nb4tryo"
+# The bot identity's ed25519 secret key (hex-encoded, 32 bytes)
+secret_key = "0000000000000000000000000000000000000000000000000000000000000000"
+# Use testnet mode
+testnet = true
+# Signup code (if homeserver requires one)
+# signup_code = "abc123"
+
+[crawl]
+# Source type: "direct" for seed URLs, "common_crawl" for CDX API
+source = "direct"
+# Common Crawl crawl ID (for CDX queries)
+crawl_id = "CC-MAIN-2026-12"
+# Language filter for CDX queries
+language_filter = ["en"]
+# Maximum number of URLs to index per run
+max_urls = 1000
+# Batch size for processing
+batch_size = 50
+# Delay between writes to homeserver (milliseconds)
+write_delay_ms = 200
+
+# Seed URLs for direct crawling
+seed_urls = [
+    "https://en.wikipedia.org/wiki/Bitcoin",
+    "https://bitcoin.org",
+    "https://github.com/nickvdp/pkarr",
+    "https://pubky.org",
+]
+
+# Nostr relays to stream from (defaults to damus, nos.lol, nostr.band)
+# nostr_relays = [
+#     "wss://relay.damus.io",
+#     "wss://nos.lol",
+#     "wss://relay.nostr.band",
+# ]
+
+[storage]
+# Path to the local SQLite database for deduplication
+db_path = "./data/webindex.db"
+
+[daemon]
+interval_secs = 300
+health_port = 8082
+nostr_max = 200
+bluesky_max = 200
+enable_nostr = true
+enable_bluesky = true
+enable_seeds = true

@@ -1,0 +1,20 @@
+/target
+/data
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Local configs and identity — never commit secrets
+config.toml
+config.local.toml
+config.docker.toml
+.bot-identity
+nexusd-local/
+
+# OS / editor junk
+._*
+.DS_Store
+*.log
+.idea/
+.vscode/

@@ -1,0 +1,29 @@
+[package]
+name = "pubky-web-index"
+version = "0.1.0"
+edition = "2021"
+description = "Web indexing service for Pubky — crawls URLs and publishes them as link posts"
+
+[dependencies]
+anyhow = "1.0"
+base32 = "0.5"
+blake3 = "1.8"
+clap = { version = "4", features = ["derive"] }
+reqwest = { version = "0.12", features = ["json", "gzip"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+scraper = "0.22"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2.5"
+pubky = "0.7"
+pkarr = "5"
+hex = "0.4"
+tokio-tungstenite = { version = "0.24", features = ["native-tls"] }
+futures-util = "0.3"
+regex = "1"
+axum = { version = "0.7", features = ["json"] }
+tower-http = { version = "0.5", features = ["cors"] }

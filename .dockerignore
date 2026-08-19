@@ -1,0 +1,8 @@
+target/
+.git/
+._*
+**/.DS_Store
+**/._*
+data/
+*.db
+.bot-identity
